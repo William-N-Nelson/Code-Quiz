@@ -1,12 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
+    <title>Nelson's Code Quiz</title>
 </head>
 <body>
-    
+    <div id = "quizStartBody"> 
+        <h1> Welcome to Willie and Skellie's Coding Quiz!</h1>
+        Take the quiz and prove your programming primacy; Press start to begin!
+    </div>
+    <div id="question1"  style="display:none;" class="question_list" > 
+        <h1>Question 1:</h1>
+        Where must the src for javascript be placed within an HTML file?
+        <div>
+            <button id="q1wrong1">Inside the header</button>
+            <button id="q1wrong2">After the html is closed</button>
+            <button id="q1right">At the bottom of the body</button>
+            <button id="q1wrong3">Not in the HTML file at all</button>
+        </div>
+    </div>
+    <div id="question2"  style="display:none;" class="question_list" > 
+        <h1>Question 1:</h1>
+        Where must the src for javascript be placed within an HTML file?
+        <div>
+            <button id="q2right">At the bottom of the body</button>
+            <button id="q2wrong1">Inside the header</button>
+            <button id="q2wrong2">After the html is closed</button>
+            <button id="q2wrong3">Not in the HTML file at all</button>
+        </div>
+    </div>
+    <div id="question3"  style="display:none;" class="question_list" > 
+        <h1>Question 1:</h1>
+        Where must the src for javascript be placed within an HTML file?
+        <div>
+            <button id="q3wrong1">Inside the header</button>
+            <button id="q3right">At the bottom of the body</button>
+            <button id="q3wrong2">After the html is closed</button>
+            <button id="q3wrong3">Not in the HTML file at all</button>
+        </div>
+    </div>
+    <button id="startBtn">Start</button>
+    <script src="./script.js"></script>
 </body>
+
 </html>

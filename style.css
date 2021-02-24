@@ -1,0 +1,22 @@
+h1{
+    color: black;
+    margin:0; 
+}
+
+body{
+    padding-bottom: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+    color: black;
+}
+
+button{
+    margin: 10px;
+    text-align: right;
+    padding: 10px;
+    color: black;
+}
