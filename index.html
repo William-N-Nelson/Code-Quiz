@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="./style.css" />
     <title>Nelson's Code Quiz</title>
     <div id= "timer">
-        Timer goes here
+        Time Remaining: 30
     </div>
 </head>
 <body>
@@ -20,31 +20,37 @@
         <h1>Question 1:</h1>
         Where must the src for a javascript file be placed within an HTML file?
         <div>
-            <button id="q1wrong1">Inside the header</button>
-            <button id="q1wrong2">After the html element is closed</button>
-            <button id="q1right">At the bottom of the body</button>
-            <button id="q1wrong3">Not in the HTML file at all</button>
+            <button id="q1false1" >Inside the header</button>
+            <button id="q1false2" >After the html element is closed</button>
+            <button id="q1true">At the bottom of the body</button>
+            <button id="q1false3" >Not in the HTML file at all</button>
         </div>
     </div>
     <div id="question2"  style="display:none;" class="question_list" > 
         <h1>Question 2:</h1>
         Where must the link rel for a CSS file be placed within an HTML file?
         <div>
-            <button id="q2right">Inside the header</button>
-            <button id="q2wrong1">At the bottom of the body</button>
-            <button id="q2wrong2">After the html element is closed</button>
-            <button id="q2wrong3">Not in the HTML file at all</button>
+            <button id="q2true">Inside the header</button>
+            <button id="q2false1" >At the bottom of the body</button>
+            <button id="q2false2" >After the html element is closed</button>
+            <button id="q2false3" >Not in the HTML file at all</button>
         </div>
     </div>
     <div id="question3"  style="display:none;" class="question_list" > 
         <h1>Question 3:</h1>
         What javascript method can be used to make html buttons work?
         <div>
-            <button id="q3wrong1">addButtonListener()</button>
-            <button id="q3right">addEventListener()</button>
-            <button id="q3wrong2">addEventListener</button>
-            <button id="q3wrong3">addButtonListener</button>
+            <button id="q3false1" >addButtonListener()</button>
+            <button id="q3true">addEventListener()</button>
+            <button id="q3false2" >addEventListener</button>
+            <button id="q3false3" >addButtonListener</button>
         </div>
+    </div>
+    <div id="quizEndBody" style="display:none;" class="question_list">
+        <h1>The Quiz is over</h1>
+        <p1 id = finalScore>
+            quiz score goes here
+        </p1>
     </div>
     <button id="startBtn" onclick="timer()">Start</button>
     <script src="./script.js"></script>
