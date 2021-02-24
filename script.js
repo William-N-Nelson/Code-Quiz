@@ -1,6 +1,19 @@
 var start = document.getElementById("startBtn")
 var q1 = document.getElementById("question1")
 var q2 = document.getElementById("question2")
+var time = document.getElementById("timer")
+
+var webTimer = 30;
+
+function timer() {
+    setTimeout(function() {
+        document.getElementById("timer").innerHTML = webTimer;
+        webTimer -= 1;
+        if (webTimer > 0) {
+            timer();
+        }
+    }, 1000)
+}
 
 function startQuiz() {
     document.getElementById("startBtn").style.display = "none";
