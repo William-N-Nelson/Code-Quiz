@@ -1,7 +1,7 @@
 # code-quiz
 In coding boot camp, we don't take multiple-choice tests; We make them!
 
-![Screenshot of the starting screen of the codiing quiz](./Screen Shot 2021-02-25 at 6.10.52 AM.png)
+![Screenshot of the starting screen of the codiing quiz](./Hep.png)
 
 Features:
 * Functioning 3-question Quiz!
