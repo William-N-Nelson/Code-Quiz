@@ -3,15 +3,35 @@ var q1 = document.getElementById("question1")
 var q2 = document.getElementById("question2")
 var q3 = document.getElementById("question3")
 var time = document.getElementById("timer")
+var showMe = document.getElementById("showHighscore")
+var saveMe = document.getElementById("saveStuff")
+/*
+var saveScore = document.getElementById("finalScore")
+*/
+var initialsListSpan = document.querySelector("#finalInit");
+var scoreListSpan = document.querySelector("#finalScore");
 
-var q1clickedtrue = false
-var q2clickedtrue = false
-var q3clickedtrue = false
 
+var qTrue = 0
 var wrongTimeDeduct = false;
-
-
 var webTimer = 30;
+
+function saveAll() {
+    var initials = document.querySelector("finalInit");
+    var saveScore = document.querySelector("finalScore");
+    
+    localStorage.setItem("finalInit", initials);
+    localStorage.setItem("finalScore", saveScore);
+    console.log(saveScore);
+    recallAll()
+}
+function recallAll() {
+    var initials = localStorage.getItem("finalInit");
+    var saveScore = localStorage.getItem("finalScore");
+
+    initials = initials;
+    saveScore = saveScore;
+}
 
 function timer() {
     setTimeout(function() {
@@ -31,29 +51,29 @@ function endQuiz() {
     document.getElementById("question3").style.display = "none";
     document.getElementById("timer").style.display = "none";
     
-    if (q1clickedtrue == true && q2clickedtrue == true && q3clickedtrue == true){
-        document.getElementById("finalScore").innerHTML = "You scored 3/3!";
+    setTimeout(function() {
+        if (qTrue == 3){
+            document.getElementById("finalScore").innerHTML = "You scored 3/3!";
+        
+        } else if (qTrue == 2) {
+            document.getElementById("finalScore").innerHTML = "You scored 2/3";
+        } else if (qTrue == 1) {
+            document.getElementById("finalScore").innerHTML = "You scored 1/3.";
+        } else {
+            document.getElementById("finalScore").innerHTML = "You scored 0/3...";
+        }
+    }, 100)
     
-    } else if (q1clickedtrue == true && q2clickedtrue == true || q1clickedtrue == true && q3clickedtrue || q2clickedtrue == true && q3clickedtrue ) {
-        document.getElementById("finalScore").innerHTML = "You scored 2/3";
-    } else if (q1clickedtrue == true || q2clickedtrue == true || q3clickedtrue == true) {
-        document.getElementById("finalScore").innerHTML = "You scored 1/3.";
-    } else {
-        document.getElementById("finalScore").innerHTML = "You scored 0/3...";
-    }
-    
-    
-
     document.getElementById("quizEndBody").style.display = "block";
 }
 
-
 function startQuiz() {
+    document.getElementById("highscore").style.display = "none";
     document.getElementById("startBtn").style.display = "none";
     document.getElementById("quizStartBody").style.display = "none";
     document.getElementById("question1").style.display = "block";
+    document.getElementById("timer").style.display = "block";
 }
-
 function question2() {
     document.getElementById("question1").style.display = "none";
     document.getElementById("question2").style.display = "block";
@@ -61,42 +81,25 @@ function question2() {
     wrongTimeDeduct = true;
     return wrongTimeDeduct;
 }
+function question3() {
+    document.getElementById("question2").style.display = "none";
+    document.getElementById("question3").style.display = "block";
+}
 
 document.addEventListener("click", function(event) {
     if (event.target.matches(".false")) {
         webTimer -= 5;
     }
 })
-
 document.addEventListener("click", function(event) {
     if (event.target.matches(".true")) {
+        qTrue += 1
+        console.log("question hello")
     }
 })
-
-
-
-function question3() {
-    document.getElementById("question2").style.display = "none";
-    document.getElementById("question3").style.display = "block";
-}
-
-document.getElementById('q1true').addEventListener("click",function() {
-    question2();
-    q1clickedtrue = true 
-    return q1clickedtrue;
-});
-document.getElementById('q2true').addEventListener("click",function() {
-    question2();
-    q2clickedtrue = true;
-    return q2clickedtrue;
-});
-document.getElementById('q3true').addEventListener("click",function() {
-    question2();
-    q3clickedtrue = true 
-    return q3clickedtrue;
-});
 
 startBtn.addEventListener("click", startQuiz);
 q1.addEventListener("click", question2)
 q2.addEventListener("click", question3)
 q3.addEventListener("click", endQuiz)
+saveMe.addEventListener("click", saveAll)

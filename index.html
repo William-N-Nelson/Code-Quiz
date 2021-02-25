@@ -7,15 +7,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css" />
     <title>Nelson's Code Quiz</title>
-    <div id= "timer">
+    <div id= "timer" style="display:none;">
         Time Remaining: 30
+    </div>
+    <div id= "highscore" class="highscore">
+        <input type="button" value="View Highscores">
+    </div>
+    <div id="showHighscore" style="display:none;">
+        <p><strong>Initials: </strong> <span id="finalInit"></span></p>
+        <p><strong>Score:</strong> <span id="finalScore"></span></p>
     </div>
 </head>
 <body>
     <div id = "quizStartBody"> 
         <h1> Welcome to Willie and Skellie's Coding Quiz!</h1>
-        Take the quiz and prove your programming primacy; Press start to begin!
+        Take the quiz and prove your programming primacy; Press start to begin
     </div>
+    
     <div id="question1"  style="display:none;" class="question_list" > 
         <h1>Question 1:</h1>
         Where must the src for a javascript file be placed within an HTML file?
@@ -51,12 +59,16 @@
         <p1 id = finalScore>
             quiz score goes here
         </p1>
+        <br>
+        <br>
         <p2>
-
+            <form>
+                Type your initials and press submit to save your score: <input type="text" id= saveStuff id="fname" name="fname">
+                <input type="submit" value="Submit">
+            </form>
         </p2>
     </div>
     <button id="startBtn" onclick="timer()">Start</button>
     <script src="./script.js"></script>
 </body>
-
 </html>
