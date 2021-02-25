@@ -8,6 +8,7 @@ var q1clickedtrue = false
 var q2clickedtrue = false
 var q3clickedtrue = false
 
+var wrongTimeDeduct = false;
 
 
 var webTimer = 30;
@@ -54,11 +55,25 @@ function startQuiz() {
 }
 
 function question2() {
-    
-
     document.getElementById("question1").style.display = "none";
     document.getElementById("question2").style.display = "block";
+
+    wrongTimeDeduct = true;
+    return wrongTimeDeduct;
 }
+
+document.addEventListener("click", function(event) {
+    if (event.target.matches(".false")) {
+        webTimer -= 5;
+    }
+})
+
+document.addEventListener("click", function(event) {
+    if (event.target.matches(".true")) {
+    }
+})
+
+
 
 function question3() {
     document.getElementById("question2").style.display = "none";
@@ -85,10 +100,3 @@ startBtn.addEventListener("click", startQuiz);
 q1.addEventListener("click", question2)
 q2.addEventListener("click", question3)
 q3.addEventListener("click", endQuiz)
-
-/* document.getElementById("q1false")  */
-/*
-document.getElementById('button').addEventListener("click", function() {
-   clicked = true
-}​);​ 
-*/
