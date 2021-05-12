@@ -25,6 +25,7 @@ function saveAll() {
     console.log(saveScore);
     recallAll()
 }
+
 function recallAll() {
     var initials = localStorage.getItem("finalInit");
     var saveScore = localStorage.getItem("finalScore");
@@ -50,21 +51,23 @@ function endQuiz() {
     document.getElementById("question2").style.display = "none";
     document.getElementById("question3").style.display = "none";
     document.getElementById("timer").style.display = "none";
+    setTimeout();
     
-    setTimeout(function() {
-        if (qTrue == 3){
-            document.getElementById("finalScore").innerHTML = "You scored 3/3!";
-        
-        } else if (qTrue == 2) {
-            document.getElementById("finalScore").innerHTML = "You scored 2/3";
-        } else if (qTrue == 1) {
-            document.getElementById("finalScore").innerHTML = "You scored 1/3.";
-        } else {
-            document.getElementById("finalScore").innerHTML = "You scored 0/3...";
-        }
-    }, 100)
     
-    document.getElementById("quizEndBody").style.display = "block";
+function setTimeout() {
+    if (qTrue == 3){
+        document.getElementById("finalScore").innerHTML = "You scored 3/3!";
+
+    } else if (qTrue == 2) {
+        document.getElementById("finalScore").innerHTML = "You scored 2/3";
+    } else if (qTrue == 1) {
+        document.getElementById("finalScore").innerHTML = "You scored 1/3.";
+    } else {
+        document.getElementById("finalScore").innerHTML = "You scored 0/3...";
+    }
+}, 100)
+
+document.getElementById("quizEndBody").style.display = "block";
 }
 
 function startQuiz() {
